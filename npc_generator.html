@@ -1,15 +1,16 @@
-<?php /*Template Name: RandomGuildName2.0*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Random Guild Generator</title>
+<title>Random NPC Generator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-h1 { color: crimson; }
-body { background-color: black; }
-p { color: crimson; }
-a { color: crimson; }
-button { color: crimson; padding: 1% }
+h1 { color: #0a0a0a;
+font: helvetica;
+ }
+body { background-color: #e8e8e8; }
+p { color: #0a0a0a; }
+a { color: #0a0a0a; }
+button { color: #0a0a0a; padding: 1% }
 @media only screen and (max-width: 786px) { button { padding: 2%; } }
 @media only screen and (max-width: 500px) { button { padding: 4%; } }
 label { border: 2px solid slateblue padding 10px; color: crimson}
@@ -19,11 +20,8 @@ input[type=checkbox] { display: none }
 </head>
 <body>
 <div style="text-align: center">
-<h1>The Random Guild Name Generator</h1>
+<h1>The Random NPC Generator</h1>
 <a href="/">Back to Homepage</a>
-<p>Inspired by the webcomic Kill Six Billion Demons and the /r/K6BD Discord Server</p>
-<label>Generate Guild HQ? <input type="checkbox" id="guildHQ"> </label>
-<label>Non-standard Generation [currently non-functional] <input type="checkbox" id="generator2"> </label>
 <br><br><button id="the_button">Generate!</button>
 <p id="the_name">Click the button to generate a Guild Name (The most recent name appears at the top!)</p>
 
@@ -66,25 +64,26 @@ $(document).ready(function(){
     });
 
     $("#the_button").click(function(){
-        var adj = ['Delitescent', 'Demure', 'Daedelian', 'Blissful', 'Caliginous', 'Capricious', 'Coalescent', 'Coruscating', 'Blazing', 'Austere', 'Bilious', 'Empyrean', 'Beauteous', 'Loquacious', 'Most Venerable', 'Most Honourable', 'Acidulous', 'Bibliophilic'];
-        var occupation1 = ['Herbalists', 'Falconers', 'Illustrators', 'Gravediggers', 'Gamblers', 'Fletchers', 'Painters', 'Poets', 'World-Sailors', 'Storytellers', 'Locksmiths', 'Wizards', 'Prophets', 'Armourers', 'Astrologers', 'Barber-Surgeons', 'Blacksmiths', 'Brewers', 'Cartwrights', 'Clerks', 'Cobblers']
-        var occupation2 = ['Engineers', 'Needlemakers', 'Jailers', 'Masons', 'Clock-makers', 'Gunsmiths', 'Witches', 'Thatchers', 'Stonecutters', 'Servants', 'Tax Collectors', 'Gong Farmers','Weaponsmiths', 'Woodcarvers', 'Apothecaries', 'Woolwinders', 'Architects', 'Bankers', 'Bookbinders', 'Tailors', 'Swineherds']
+        var name = ['Todd', 'Jeff', 'Steve', 'Tom', 'John', 'Sarah', 'Elizabeth', 'Lucy', 'Derrick', 'Frank', 'Kale', 'Kane', 'Zack', 'Carl', 'Karl', 'Harry', 'Harrison', 'Martin', 'Mark', 'Marcy', 'Acantha', 'Abigail', 'Adon', 'Adraste', 'Aron', 'Agalia', 'Ajax', 'Alexander', 'Abilene', 'Abraham', 'Adrian', 'Agnes', 'Bartholomew', 'Baxter', 'Beckett', 'Bernard', 'Beryl', 'Blair', 'Bonnie', 'Brandon', 'Caitlin', 'Cairo', 'Calista', 'Callum', 'Camille', 'Carly', 'Caroline', 'Coraline', 'Cheyenne', 'Christine', 'Damian', 'Dan', 'Darren', 'Daryl', 'Delilah', 'Denise', 'Dwayne', 'Dyson', 'Earl', 'Edna', 'Elenor', 'Elliot', 'Elijah', 'Emma'];
+        var lastname = ['Alden', 'Alexander', 'Alvin', 'Anderson', 'Avery', 'Barton', 'Bates', 'Baxter', 'Bonham', 'Bryant', 'Caldwell', 'Carver', 'Caulfield', 'Cline', 'Craig', 'Dermot', 'Davies', 'Daube', 'Dalton', 'Dwight', 'Earle', 'Engel', 'Ennes', 'Ellison', 'Everly', 'Fitzroy', 'Forrest', 'Freud', 'Ferguson', 'Freeman', 'Gardiner', 'Garnett', 'Graves', 'Gerst', 'Graham', 'Gallagher'];
+        var adj = ['Delitescent', 'Demure', 'Cunning', 'Blissful', 'Caliginous', 'Capricious', 'Coalescent', 'Coruscating', 'Blazing', 'Austere', 'Bilious', 'Empyrean', 'Beauteous', 'Loquacious', 'Most Venerable', 'Most Honourable', 'Acidulous', 'Bibliophilic', 'Slothful', 'Wrathful', 'Lustful', 'Mad', 'Stern', 'Perfectionist', 'Heavy-set', 'Lithe'];
+        var occupation1 = ['Herbalist', 'Falconer', 'Illustrator', 'Gravekeeper', 'Gambler', 'Fletcher', 'Painter', 'Poet', 'World-Sailor', 'Storyteller', 'Locksmith', 'Wizard', 'Prophet', 'Armourer', 'Astrologer', 'Barber-Surgeon', 'Blacksmith', 'Brewer', 'Cartwright', 'Clerk', 'Cobbler', 'Engineer', 'Needlemaker', 'Jailer', 'Mason', 'Clock-maker', 'Gunsmith', 'Witch', 'Thatcher', 'Stonecutter', 'Servant', 'Tax Collector', 'Gong Farmer','Weaponsmith', 'Woodcarver', 'Apothecary', 'Woolwinder', 'Architect', 'Banker', 'Bookbinder', 'Tailor', 'Swineherd'];
 		var hq_type = ['Bastille', 'Fortress', 'Fort', 'Keep', 'Castle', 'Vault', 'Spire', 'Tower', 'Bank', 'Sanctuary', 'Zeppelin', 'Manor', 'Stable', 'Pyramid']
 		var hq_style = ['Secret', 'Hidden', 'Mystical', 'Flying', 'Floating', 'Mundane', 'Grandiose', 'Giant', 'Wealthy', 'Terrifying', 'Regal', 'Non-Euclidean']
 		var hq_feature = ['a network of tunnels', 'a heavily-gaurded room', 'an aqueduct', 'a throne room', 'a moat', 'a stable', 'lots of paintings', 'a throne room', 'an old king\'s court', 'a heavily-stocked armory',  'an endless hallway','a secret entrance']
     var hq_feature2 = ['is filled with gold and jewels', 'is constructed from the strongest materials', 'is invisible as long as the guild leader lives', 'is immune to magic', 'is feared by its own inhabitants', 'sometimes talks', 'was created long before the guild inhabited it', 'was taken over by the current guild from a previous owner', 'is still unknown to everyone else']
 
-        var r1 = getRandomInt(adj.length);
-        var r2 = getRandomInt(occupation1.length);
-        var r3 = getRandomInt(occupation2.length);
-		var r4 = getRandomInt(hq_type.length);
-		var r5 = getRandomInt(hq_style.length);
+        var r1 = getRandomInt(name.length);
+        var r2 = getRandomInt(lastname.length);
+        var r3 = getRandomInt(adj.length);
+		    var r4 = getRandomInt(occupation1.length);
+		var r5 = getRandomInt(npc_hair.length);
 		var r6 = getRandomInt(hq_feature.length);
     var r7 = getRandomInt(hq_feature2.length);
 
-        var out = "The {0} Guild of {1} and {2}".formatUnicorn(adj[r1], occupation1[r2], occupation2[r3]);
-		var extra = " This guild's HQ is a {0} {1} that has {2} and {3}.".formatUnicorn(hq_style[r5], hq_type[r4], hq_feature[r6], hq_feature2[r7]);
-
+        var out = "{0} {1}, the {2} {3}.".formatUnicorn(name[r1], lastname[r2], adj[r3], occupation1[r4]);
+/*		var extra = " This guild's HQ is a {0} {1} that has {2} and {3}.".formatUnicorn(hq_style[r5], hq_type[r4], hq_feature[r6], hq_feature2[r7]);
+*/
         if ($("#guildHQ").is(":checked")) {
 			$("p#the_name").after("<p>" + out + "<br>" + extra + "</p>");
 			}
