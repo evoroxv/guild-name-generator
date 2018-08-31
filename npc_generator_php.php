@@ -24,7 +24,7 @@ input[type=checkbox] { display: none }
 <h1>The Random NPC Generator</h1>
 <a href="/">Back to Homepage</a>
 <br><br><button id="the_button">Generate!</button>
-<p id="the_name">Click the button to generate a Guild Name (The most recent name appears at the top!)</p>
+<p id="the_name">Click the button to generate an NPC (The most recent name appears at the top!)</p>
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
